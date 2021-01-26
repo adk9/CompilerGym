@@ -33,8 +33,13 @@ py_library(
 py_library(
     name = "datasets",
     srcs = ["datasets.py"],
+    data = [
+        "//compiler_gym/third_party/cBench:make_runtime_data",
+        "//compiler_gym/third_party/llvm:clang",
+    ],
     deps = [
         "//compiler_gym/datasets:dataset",
+        "//compiler_gym/util",
     ],
 )
 
