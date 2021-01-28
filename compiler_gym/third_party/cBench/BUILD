@@ -175,6 +175,7 @@ genrule(
     outs = ["cBench-v0/blowfish.bc"],
     cmd = "mkdir -p $(@D) && $(location :make_llvm_module) $$(dirname $(location @cBench//:readme))/security_blowfish_d $@",
     tools = [":make_llvm_module"],
+    visibility = ["//visibility:public"],
 )
 
 genrule(
